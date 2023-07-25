@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { Heading, Icon } from '@ugg/colibri';
+import { Heading, Icon, Text } from '@ugg/colibri';
 import packageInfo from '../package.json';
 
 const App = () => {
@@ -8,12 +8,15 @@ const App = () => {
   const packageVersion =
     packageInfo.dependencies && packageInfo.dependencies[packageName];
 
+  const iconType = 'ProgHoldManual';
+
   return (
     <>
       <Heading>
-        React app using Colibri {packageName}: {packageVersion || 'Not Found'}
+        React app using {packageName}: {packageVersion || 'Not Found'}
       </Heading>
-      <Icon type='Beer' />
+      <Icon type={iconType} size='Large' />
+      <Text>{iconType}</Text>
     </>
   );
 };
