@@ -25,7 +25,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "@ugg/colibri": "^0.1.307-CI",
+    "@ugg/colibri": "^0.1.310-CI",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
