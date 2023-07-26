@@ -9,11 +9,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
+        resolve: {
+          extensions: [".js", ".jsx"]
         },
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
         test: /\.css$/,
@@ -21,14 +24,16 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.ts', '.js', '.tsx', '.jsx'],
+  },
   plugins: [
     htmlPlugin,
     new CopyWebpackPlugin({
       patterns: [
-        // TODO: TRYING TO LOAD COLIBRI FONTS!!!
         {
-          from: './node_modules/@ugg/colibri/dist/fonts/',
-          to: './fonts/',
+          from: './node_modules/@ugg/colibri/dist/common/fonts/',
+          to: './common/fonts/',
         },
       ],
     }),

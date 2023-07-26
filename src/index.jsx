@@ -1,6 +1,14 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { Heading, Icon, Text } from '@ugg/colibri';
+import {
+  ThemeProvider,
+  Heading,
+  Icon,
+  Text,
+  TextColor,
+  ThemeMode,
+  ThemeType,
+} from '@ugg/colibri';
 import packageInfo from '../package.json';
 
 const App = () => {
@@ -11,13 +19,16 @@ const App = () => {
   const iconType = 'ProgHoldManual';
 
   return (
-    <>
+    <ThemeProvider
+      themeType={ThemeType.UNITEDGRINDING}
+      themeMode={ThemeMode.DAY}
+    >
       <Heading>
         React app using {packageName}: {packageVersion || 'Not Found'}
       </Heading>
       <Icon type={iconType} size='Large' />
-      <Text>{iconType}</Text>
-    </>
+      <Text color={TextColor.interaction}>{iconType}</Text>
+    </ThemeProvider>
   );
 };
 
