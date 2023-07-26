@@ -16,7 +16,8 @@ const App = () => {
   const packageVersion =
     packageInfo.dependencies && packageInfo.dependencies[packageName];
 
-  const iconType = 'ProgHoldManual';
+  const icon1 = 'ProgHoldManual';
+  const icon2 = 'RomeoStar';
 
   return (
     <ThemeProvider
@@ -26,8 +27,10 @@ const App = () => {
       <Heading>
         React app using {packageName}: {packageVersion || 'Not Found'}
       </Heading>
-      <Icon type={iconType} size='Large' />
-      <Text color={TextColor.interaction}>{iconType}</Text>
+      <Icon type={icon1} size='Large' />
+      <Text color={TextColor.interaction}>{icon1}</Text>
+      <Icon type={icon2} size='Large' />
+      <Text color={TextColor.interaction}>{icon2}</Text>
     </ThemeProvider>
   );
 };
