@@ -9,12 +9,15 @@ import {
   ThemeMode,
   ThemeType,
 } from '@ugg/colibri';
-import packageInfo from '../package.json';
+import packageInfo from '../package-lock.json';
+
+import '@ugg/colibri/dist/fonts.css';
 
 const App = () => {
   const packageName = '@ugg/colibri';
   const packageVersion =
-    packageInfo.dependencies && packageInfo.dependencies[packageName];
+    packageInfo.packages[''].dependencies &&
+    packageInfo.packages[''].dependencies[packageName];
 
   const icon1 = 'ProgHoldManual';
   const icon2 = 'RomeoStar';

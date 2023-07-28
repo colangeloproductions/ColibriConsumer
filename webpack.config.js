@@ -1,4 +1,3 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
@@ -6,6 +5,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 module.exports = {
   mode: 'development',
+  devServer: {
+    port: 9000
+  },
   module: {
     rules: [
       {
@@ -29,13 +31,5 @@ module.exports = {
   },
   plugins: [
     htmlPlugin,
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: './node_modules/@ugg/colibri/dist/common/fonts/',
-          to: './common/fonts/',
-        },
-      ],
-    }),
   ],
 };
